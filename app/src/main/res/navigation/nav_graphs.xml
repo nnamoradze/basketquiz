@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graphs"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="Fragments.HomeFragment"
+        tools:layout="@layout/home_fragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/questionFragment"
+        tools:layout="@layout/questions_fragment"
+        android:name="Fragments.QuestionFragment"
+        android:label="QuestionFragment" >
+
+        <argument
+            android:name="name"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/action_questionFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        tools:layout="@layout/result_fragment"
+        android:name="Fragments.ResultFragment"
+        android:label="ResultFragment" >
+
+        <action
+            android:id="@+id/action_resultFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <argument
+            android:name="name"
+            app:argType="string" />
+
+        <argument
+            android:name="playerScore"
+            app:argType="string" />
+
+
+    </fragment>
+
+
+
+</navigation>
